@@ -239,12 +239,14 @@ TEST_CASE ("GOOD CASES: INCREAMENT OPERTORS") {
         CHECK_EQ((++A)==B, true);
         CHECK_EQ((A--)==A, true);
         CHECK_EQ((--A)==C, true);
+        CHECK_NOTHROW(A*3);
 }
 
-TEST_CASE ("CONSTRUCTOR: NOT APPROPIATE PARAMETERS") {
+TEST_CASE ("CONSTRUCTOR: NOT APPROPRIATE PARAMETERS") {
     vector<double> vector1 = {1,2,3,4,5,6,7};
     CHECK_THROWS(Matrix(vector1, 5, 2));
     CHECK_THROWS(Matrix(vector1, 4, 2));
     CHECK_THROWS(Matrix(vector1, -1, 2));
     CHECK_THROWS(Matrix(vector1, 4, 0));
+    
 }

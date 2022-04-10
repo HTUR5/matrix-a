@@ -12,52 +12,52 @@ namespace zich {
     
     public:
         
-        Matrix(const vector<double> &numbers, int n, int m);
-        
-        Matrix operator+(Matrix const &B);
+        Matrix(const vector<double> &mat, int rows, int cols);
 
-        Matrix& operator+=(Matrix const &B);
-
-        Matrix operator+();
-
-        Matrix operator-(Matrix const &B);
-
-        Matrix& operator-=(Matrix const &B);
+        Matrix operator-(Matrix const &mat);
 
         Matrix operator-();
 
+        Matrix& operator-=(Matrix const &mat);
+
+        Matrix operator+(Matrix const &mat);
+
+        Matrix operator+();
+
+        Matrix& operator+=(Matrix const &mat);
+
         Matrix operator*(double scalar);
 
-        friend Matrix operator*(double const &scalar, Matrix other);
+        friend Matrix operator*(double const &scalar, Matrix mat);
 
-        Matrix operator*(Matrix const &B);
+        Matrix operator*(Matrix const &mat);
 
-        Matrix& operator*=(Matrix const &B);
+        Matrix& operator*=(Matrix const &mat);
 
         Matrix& operator*=(double scalar);
-
+        
         Matrix& operator++();
-
-        Matrix& operator--();
 
         Matrix& operator++(int);
 
+        Matrix& operator--();
+
         Matrix& operator--(int);
 
-        bool operator<(Matrix  &B);
+        bool operator<(Matrix  &mat);
 
-        bool operator>(Matrix  &B);
+        bool operator<=(Matrix  &mat);
 
-        bool operator<=(Matrix  &B);
+        bool operator>(Matrix  &mat);
 
-        bool operator>=(Matrix  &B);
+        bool operator>=(Matrix  &mat);
 
-        bool operator==(Matrix  &B);
+        bool operator!=(Matrix  &mat);
 
-        bool operator!=(Matrix  &B);
+        bool operator==(Matrix  &mat);
 
         void print();
 
-        friend std::ostream &operator<<(std::ostream &o, Matrix const &m);
+        friend std::ostream &operator<<(std::ostream &str, Matrix const &mat);
     };
 }
